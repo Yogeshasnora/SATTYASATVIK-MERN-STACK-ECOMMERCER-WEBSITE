@@ -12,8 +12,6 @@ import { Label } from "../ui/label";
 import StarRatingComponent from "../common/star-rating";
 import { useEffect, useState, useMemo, useCallback, useRef } from "react";
 import { addReview, getReviews } from "@/store/shop/review-slice";
-
-/* helper to split description into pages */
 function chunkText(text = "", size = 240) {
   if (!text) return [];
   const parts = [];
@@ -24,7 +22,6 @@ function chunkText(text = "", size = 240) {
       parts.push(remaining.trim());
       break;
     }
-
     const slice = remaining.slice(0, size);
     let lastBreak = Math.max(
       slice.lastIndexOf("."),
@@ -65,20 +62,14 @@ function ProductDetailsDialog({ open, setOpen, productDetails }) {
   const sliderRef = useRef(null);
   const containerRef = useRef(null);
 
-  // ensure index reset when product changes
   useEffect(() => {
     setDescIndex(0);
   }, [productDetails?._id]);
 
-  // NOTE: keyboard & touch swipe handlers removed per request.
-  // Only Prev/Next buttons will control the slider.
-
-  // load reviews when product changes
   useEffect(() => {
     if (productDetails !== null) dispatch(getReviews(productDetails?._id));
   }, [productDetails, dispatch]);
 
-  // clear local states on dialog close
   function handleDialogClose() {
     setOpen(false);
     dispatch(setProductDetails());

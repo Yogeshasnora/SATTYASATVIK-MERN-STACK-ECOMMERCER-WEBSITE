@@ -56,17 +56,17 @@ function ProductImageUpload({
       data
     );
 
-    console.log("✅ Cloudinary Upload Response:", response.data);
+    console.log(" Cloudinary Upload Response:", response.data);
 
     if (response?.data?.success && response?.data?.url) {
   setUploadedImageUrl(response.data.url);
 } else {
-  console.error("❌ Upload failed or no URL returned:", response.data);
+  console.error(" Upload failed or no URL returned:", response.data);
   alert("Image upload failed! Check backend response.");
 }
 
   } catch (error) {
-    console.error("❌ Error uploading image:", error);
+    console.error(" Error uploading image:", error);
     alert("Error uploading image. Check console for details.");
   } finally {
     setImageLoadingState(false);

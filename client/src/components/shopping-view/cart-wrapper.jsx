@@ -30,14 +30,12 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
         border-l border-neutral-800
       "
     >
-      {/* Header */}
       <SheetHeader>
         <SheetTitle className="text-white font-bold">
           Your Cart
         </SheetTitle>
       </SheetHeader>
 
-      {/* Cart Items */}
       <div className="mt-8 space-y-4">
         {cartItems && cartItems.length > 0
           ? cartItems.map((item) => (
@@ -46,7 +44,6 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
           : null}
       </div>
 
-      {/* Total Section */}
       <div className="mt-8 space-y-4">
         <div className="flex justify-between text-neutral-200">
           <span className="font-bold">Total</span>
@@ -54,7 +51,6 @@ function UserCartWrapper({ cartItems, setOpenCartSheet }) {
         </div>
       </div>
 
-      {/* Checkout Button */}
       <Button
         onClick={() => {
           navigate("/shop/checkout");

@@ -6,8 +6,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-
-// === Animation Variants ===
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -87,7 +85,6 @@ function AuthLogin() {
         </p>
       </motion.div>
 
-      {/* === Form Section === */}
       <motion.div variants={itemVariants}>
         <CommonForm
           formControls={loginFormControls}

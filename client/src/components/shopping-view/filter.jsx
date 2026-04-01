@@ -7,12 +7,10 @@ import { Separator } from "../ui/separator";
 function ProductFilter({ filters, handleFilter }) {
   return (
     <div className="rounded-lg shadow-sm bg-neutral-900 border border-neutral-800 text-neutral-100">
-      {/* Header */}
       <div className="p-4 border-b border-neutral-800">
         <h2 className="text-lg font-extrabold text-neutral-100">Filters</h2>
       </div>
 
-      {/* Filter Sections */}
       <div className="p-4 space-y-4">
         {Object.keys(filterOptions).map((keyItem) => (
           <Fragment key={keyItem}>
